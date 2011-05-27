@@ -41,6 +41,14 @@ while len(pfactor(modulo)) != 1:
 	modulo += 1
 
 limit = 9999
+# The limit is there for two reasons:
+# * it's in original.py
+# * I'm not certain that all charset permutations are valid, that would be the
+#   case if the following conjecture is verified:
+# 	  m is prime, n is part of the natural numbers
+# 	  there is no i part of the natural numbers and i < m such that
+# 	  n * m + i is never prime
+#   In this case, n is candidate, m is modulo and i is index
 for charset in itertools.permutations(charset_letters):
 	factor = []
 	n = 0
